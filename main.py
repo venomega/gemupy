@@ -15,7 +15,7 @@ def get_identifier(fd):
         count += 1
 
 def dump_data(dict):
-    fd = open("a.json", 'w')
+    fd = open("keys.data", 'w')
     for i in dict.keys():
         print (f"{i} {dict[i][0].hex()} {dict[i][1].hex()}", file=fd, flush=True)
 
@@ -44,7 +44,7 @@ if __name__ == "__main__":
     #keys = config_keys(d, fd)
     #print (keys)
     #dump_data(keys)
-    keys=load_data(open("a.json"))
+    keys=load_data(open("keys.data"))
     while True:
         stream = fd.read(8)
         for i in keys.keys():
