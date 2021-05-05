@@ -1,6 +1,9 @@
 import os
 import sys
 
+if sys.platform != 'linux':
+    print("Sorry, this code only works on gnu/linux")
+    exit(1)
 
 def get_identifier(fd):
     count= 1
@@ -56,7 +59,6 @@ def loop(keys, fd):
         for i in keys.keys():
             if stream[-4:].hex() == keys[i][0]:
                 print (f"Pressed {i}")
-                print (keys[i])
                 keydown(keys[i][2])
             if stream[-4:].hex() == keys[i][1]:
                 print (f"Released {i}")
