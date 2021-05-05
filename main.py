@@ -46,10 +46,10 @@ def loop(keys, fd):
         for i in keys.keys():
             if stream[-4:].hex() == keys[i][0]:
                 print (f"Pressed {i}")
-                keyup(i)
+                keydown(i)
             if stream[-4:].hex() == keys[i][1]:
                 print (f"Released {i}")
-                keydown(i)
+                keyup(i)
 
 if __name__ == "__main__":
     port = sys.argv[1]
