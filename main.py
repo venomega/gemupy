@@ -2,9 +2,6 @@ import os
 import sys
 
 
-d = ['x', 'y', 'b', 'a']
-keys={}
-
 def get_identifier(fd):
     count= 1
     while count<20:
