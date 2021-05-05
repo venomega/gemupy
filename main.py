@@ -73,7 +73,11 @@ def dump_all(fd):
 if __name__ == "__main__":
     port = sys.argv[-1]
     fd = open(port, 'br')
-    get_identifier(fd)
+    if not "event" in port:
+        get_identifier(fd)
+    else:
+        print ("ERROR: event not support jet")
+        exit(1)
 
     if "--configure" in sys.argv:
         keys = config_keys(fd)
