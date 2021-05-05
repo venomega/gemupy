@@ -5,9 +5,6 @@ import sys
 d = ['x', 'y', 'b', 'a']
 keys={}
 
-
-
-
 def get_identifier(fd):
     count= 1
     while count<20:
@@ -36,6 +33,23 @@ def config_keys(d, fd):
         keys[i] = [stream[-4:], release[-4:]]
     return keys
 
+def keyup(string):
+    os.popen(f"xdotool keyup {string}")
+
+def keydown(string):
+    os.popen(f"xdotool keydown {string}")
+
+
+def loop(keys, fd):
+    while True:
+        stream = fd.read(8)
+        for i in keys.keys():
+            if stream[-4:].hex() == keys[i][0]:
+                print (f"Pressed {i}")
+                keyup(i)
+            if stream[-4:].hex() == keys[i][1]:
+                print (f"Released {i}")
+                keydown(i)
 
 if __name__ == "__main__":
     port = sys.argv[1]
@@ -45,11 +59,8 @@ if __name__ == "__main__":
     #print (keys)
     #dump_data(keys)
     keys=load_data(open("keys.data"))
-    while True:
-        stream = fd.read(8)
-        for i in keys.keys():
-            if stream[-4:].hex() == keys[i][0]:
-                print (f"Pressed {i}")
-            if stream[-4:].hex() == keys[i][1]:
-                print (f"Released {i}")
+    loop(keys, fd)
+
+
+
             
