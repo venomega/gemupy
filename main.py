@@ -73,7 +73,7 @@ def dump_all(fd):
 if __name__ == "__main__":
     port = sys.argv[-1]
     fd = open(port, 'br')
-    if not "event" in port:
+    if not "event" in port and (("/dev/input/js" in port) or ("/dev/js" in port)) :
         get_identifier(fd)
     else:
         print ("ERROR: event not support jet")
