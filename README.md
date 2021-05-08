@@ -15,7 +15,7 @@ This program is intended to capture a joystick input and put on applications a k
  - key up & down
  - digital keys & analog keys
  - it can`t differentiate between various analog inputs on same xis
- - custom configurations & keys
+ - custom map keys
 
 The only thing needed is a ```/dev/input/js*``` file and ```xdotool``` program
 
