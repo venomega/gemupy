@@ -5,6 +5,11 @@ if sys.platform != 'linux':
     print("Sorry, this code only works on gnu/linux")
     exit(1)
 
+if system("/usr/bin/which xdotool") != 0:
+    print ("ERROR: prease install xdotool binaries")
+    exit(1)
+
+
 def get_identifier(fd):
     count= 1
     while count<20:
@@ -52,7 +57,6 @@ def keyup(string):
 def keydown(string):
     os.popen(f"xdotool keydown {string}")
 
-
 def loop(keys, fd):
     while True:
         stream = fd.read(8)
@@ -98,7 +102,3 @@ if __name__ == "__main__":
 
     keys=load_data(open("keys.data"))
     loop(keys, fd)
-
-
-
-            
