@@ -6,7 +6,7 @@
  - 4bits length joystick support
 
 
-There are situations where a software doesn`t read propertly a joystick or a joystick that could be readed by the kernel, but not very well for other programs.
+There are situations where a software doesn`t read propertly a joystick or a joystick that could be readed by the kernel, but not very well by other programs.
 
 This program is intended to capture a joystick input and put on applications a keyboard key of your choise, or convert a joystick input to a keyboard output that works on any program.
 
