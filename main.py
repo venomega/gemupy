@@ -6,7 +6,7 @@ if sys.platform != 'linux':
     exit(1)
 
 if os.system("/usr/bin/which xdotool") != 0:
-    print ("ERROR: prease install xdotool binaries")
+    print("ERROR: please install xdotool binaries")
     exit(1)
 
 
