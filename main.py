@@ -2,7 +2,7 @@ import os
 import sys
 
 if sys.platform != 'linux':
-    print("Sorry, this code only works on gnu/linux")
+    print("Sorry, this code only works on gnu")
     exit(1)
 
 if os.system("/usr/bin/which xdotool") != 0:
