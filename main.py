@@ -127,7 +127,7 @@ def mouse(stream, keys):
         os.popen(f"xdotool keydown click {num}")
 
     def key_up(num):
-        os.popen(f"xdotool keydown click {num}")
+        os.popen(f"xdotool keyup click {num}")
 
     if "button_1" in keys[-1]:
         if stream[-4:].hex() == keys[0]:
