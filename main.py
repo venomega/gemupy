@@ -9,7 +9,7 @@ if sys.platform != 'linux':
     print("Sorry, this code only works on gnu")
     exit(1)
 
-if os.system("/usr/bin/which xdotool") != 0:
+if os.system("/usr/bin/which xdotool > /dev/null") != 0:
     print("ERROR: please install xdotool binaries")
     exit(1)
 
@@ -180,6 +180,7 @@ def dump_all(fd):
 
                 
 if __name__ == "__main__":
+
     port = sys.argv[-1]
     fd = open(port, 'br')
     if not "event" in port and (("/dev/input/js" in port) or ("/dev/js" in port)) :
